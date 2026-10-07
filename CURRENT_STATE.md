@@ -15,6 +15,11 @@
 
 > **Atualização 2026-09-30.** A combinação corrente do stack, o que foi validado em conjunto e o estado do ciclo de
 > qualificação D-27 estão em [ETAPA_B_INTEGRATED_STACK_20260928.md](ETAPA_B_INTEGRATED_STACK_20260928.md) (seção
+> **Camada 2026-10-07 (noite):** cain `v0.4.13rc16` (`de5db06b`, wheel `d8fca502…`; código igual ao da rc15, lock pelo registro, R01/D-32)
+> adotada na lock conjunta `compat/` e publicada como ecosystem `0.2.2`; qualificada pelas integrações crypto (rc16) e stocks (ciclo 6)
+> do predictor-qualification (attestations QUALIFIED, D-34); a integração do brasileirão continua na rc13 até o runtime do dono.
+> O parágrafo seguinte é o estado de 2026-09-30, preservado.
+>
 > "Atualização de 2026-09-30"). Wheels publicadas: core 3.2.1, ops 4.2.2rc1, ecosystem 0.2.1, protocolo 2.0.0rc2,
 > transporte 0.1.0rc7, snapshot 1.0.2rc1, bundle 1.0.1rc1, cain 0.4.13rc15, cripto 1.2.0rc4, brasileirão 0.3.0rc5,
 > stocks 0.3.0rc3 (`registries/released_architecture.json`; `registries/compatibility_candidate.json` aponta para os

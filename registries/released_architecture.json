@@ -1,6 +1,6 @@
 {
   "schema_version": "released-architecture/1",
-  "verified_at": "2026-09-29",
+  "verified_at": "2026-10-07",
   "status": "PUBLISHED_HASH_VERIFIED",
   "economic_validation": false,
   "repositories": [
@@ -39,20 +39,34 @@
     },
     {
       "repository": "cain",
-      "tag": "v0.4.13rc15",
-      "source_commit": "ae00017ab4a2ce602998e8fbdb8b20be95aad99d",
-      "release_url": "https://github.com/leonardosovienski/cain/releases/tag/v0.4.13rc15",
-      "ci_run_id": 36644000499,
-      "ci_url": "https://github.com/leonardosovienski/cain/actions/runs/36644000499",
+      "tag": "v0.4.13rc16",
+      "source_commit": "de5db06b4731485101a24ed334c387e75bd89a58",
+      "release_url": "https://github.com/leonardosovienski/cain/releases/tag/v0.4.13rc16",
+      "ci_run_id": 37695085002,
+      "ci_url": "https://github.com/leonardosovienski/cain/actions/runs/37695085002",
       "wheels": [
         {
           "name": "cain-research",
-          "version": "0.4.13rc15",
-          "filename": "cain_research-0.4.13rc15-py3-none-any.whl",
-          "url": "https://github.com/leonardosovienski/cain/releases/download/v0.4.13rc15/cain_research-0.4.13rc15-py3-none-any.whl",
-          "sha256": "ff642b7271a7fcad18723b12bc7ebe29f0c2550ecfe178777b5c1481882aacf9"
+          "version": "0.4.13rc16",
+          "filename": "cain_research-0.4.13rc16-py3-none-any.whl",
+          "url": "https://github.com/leonardosovienski/cain/releases/download/v0.4.13rc16/cain_research-0.4.13rc16-py3-none-any.whl",
+          "sha256": "d8fca502420f66ebb39dc98f965895e17530c42ee413af61798e7a7dcfc9a302"
         }
-      ]
+      ],
+      "previous": {
+        "tag": "v0.4.13rc15",
+        "source_commit": "ae00017ab4a2ce602998e8fbdb8b20be95aad99d",
+        "wheels": [
+          {
+            "name": "cain-research",
+            "version": "0.4.13rc15",
+            "filename": "cain_research-0.4.13rc15-py3-none-any.whl",
+            "url": "https://github.com/leonardosovienski/cain/releases/download/v0.4.13rc15/cain_research-0.4.13rc15-py3-none-any.whl",
+            "sha256": "ff642b7271a7fcad18723b12bc7ebe29f0c2550ecfe178777b5c1481882aacf9"
+          }
+        ]
+      },
+      "note": "2026-10-07: rc16 publicada pelo Release (run 37696634940) depois da mudança de lock do R01; código do pacote igual ao da rc15; sha256 conferido por download anônimo"
     },
     {
       "repository": "ecosystem-predictor",
@@ -123,5 +137,5 @@
       ]
     }
   ],
-  "note": "Releases correntes de cada repositório em 2026-09-29 (sha256 dos assets conferidos pela API de releases; cripto/brasileirão/cain/ecosystem publicadas pelo workflow release.yml com build reprodutível). Não é atestação científica."
+  "note": "Releases correntes de cada repositório em 2026-09-29 (sha256 dos assets conferidos pela API de releases; cripto/brasileirão/cain/ecosystem publicadas pelo workflow release.yml com build reprodutível). Não é atestação científica. Camada 2026-10-07: cain v0.4.13rc16 adotada na lock conjunta (compat/) e nas integrações crypto/stocks do predictor-qualification (attestations QUALIFIED, D-34); ecosystem 0.2.2 publica esta adoção; as demais releases não mudam."
 }

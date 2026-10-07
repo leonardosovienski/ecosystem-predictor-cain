@@ -186,3 +186,21 @@ Pela C14 do núcleo, a wheel nova do cain e do transporte refaz as fases das tr�
 As attestations `QUALIFIED` da tabela do topo continuam vigentes para os `final_commits` delas (C22); o `main` de cada repositório é
 pós-qualificação. As configurações de domínio da cain rc15 (`crypto.json`, `stocks.json`, `brasileirao.json`) são byte a byte as da rc13;
 `policy.py` difere só por uma anotação de tipo. `QUALIFIED` não é edge nem autoriza capital.
+
+
+## Atualização de 2026-10-07: ciclo D-34 (cain 0.4.13rc16, lock por registro) — integrações crypto e stocks **QUALIFIED**
+
+O programa de remediação do CAIN (R01, D-32) trocou os locks de URLs de release pelo registro `STACK_WHEELS.json` + índice local; a cain
+foi publicada como `v0.4.13rc16` (`de5db06b`, wheel `d8fca502…`; código do pacote igual ao da rc15). As decisões D-29/D-30/D-31,
+delegadas pelo dono em 2026-09-30 e escritas em 2026-10-07, fecharam o que bloqueava o ciclo rc15. Esta lock conjunta (`compat/`) passa
+a fixar a cain rc16 (ecosystem `0.2.2`); transporte rc7, protocolo rc2, cripto rc4, brasileirão rc5, stocks rc3, core 3.2.1 e ops
+4.2.2rc1 não mudam.
+
+| Missão | Alvo | Evidência | Estado |
+|---|---|---|---|
+| `crypto` V1.2 | cripto rc4 `21f8b182` | run 36646241688 (`windows-latest` aceito pela D-30) | **QUALIFIED** (V1.1 preservada) |
+| `integration-crypto` rc16 | cain rc16 + transporte rc7 + cripto rc4 | runs 37696817503 (fases + windows) e 37698397521 (cleanroom-final): e2e 56/0, N+1 21/0, isolamento 22/0, F01–F15 50/0, soak 48/0, Windows 56/0; identidade 13/0; final_wheels 17/0 | **QUALIFIED** (rc13 preservada) |
+| `integration-stocks` ciclo 6 | cain rc16 + transporte rc7 (stocks rc3, cripto rc3) | pin 37696821981; run 37698400981: e2e 55/0, N+1 63/0 e 64/0, isolamento 28/0, F01–F15 50/0, soak 43/0, Windows 55/0; identidade 14/0; final_wheels 19/0 | **QUALIFIED** (ciclo 4 preservada) |
+| `integration-brasileirao` rc16 | cain rc16 + transporte rc7 (brasileirão rc4) | só conferências estáticas | **BLOCKED** (runtime no PC 2 do dono) |
+
+Fonte: `predictor-qualification` PR #104 (`qualification/integration-*/QUALIFICATION_ATTESTATION.json`, `QUALIFICATION_CHANGELOG.md`).

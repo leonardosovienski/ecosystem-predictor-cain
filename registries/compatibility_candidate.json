@@ -18,8 +18,8 @@
     },
     "cain": {
       "repository": "https://github.com/leonardosovienski/cain",
-      "commit": "ae00017ab4a2ce602998e8fbdb8b20be95aad99d",
-      "version": "0.4.13rc15"
+      "commit": "de5db06b4731485101a24ed334c387e75bd89a58",
+      "version": "0.4.13rc16"
     }
   },
   "shared": {
@@ -41,5 +41,11 @@
     "transport": "0.1.0rc7",
     "contract": "ResearchTaskV2/ResearchResultV2 (research_protocol.v2)",
     "note": "Etapa B: CAIN consome predictor-research-transport 0.1.0rc7 + predictor-research-protocol 2.0.0rc2 pelo uv.lock; os domínios não dependem do envelope (D-13)"
-  }
+  },
+  "layers": [
+    {
+      "date": "2026-10-07",
+      "change": "cain 0.4.13rc15 -> 0.4.13rc16 (lock por registro, R01/D-32; código igual); validado pela lock conjunta compat/ (joint-install) e pelas attestations rc16 de integration-crypto e integration-stocks (predictor-qualification #104)"
+    }
+  ]
 }
