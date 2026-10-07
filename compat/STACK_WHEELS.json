@@ -8,11 +8,11 @@
   "wheels": [
     {
       "package": "cain-research",
-      "version": "0.4.13rc15",
+      "version": "0.4.13rc16",
       "repository": "leonardosovienski/cain",
-      "release_tag": "v0.4.13rc15",
-      "asset": "cain_research-0.4.13rc15-py3-none-any.whl",
-      "sha256": "ff642b7271a7fcad18723b12bc7ebe29f0c2550ecfe178777b5c1481882aacf9"
+      "release_tag": "v0.4.13rc16",
+      "asset": "cain_research-0.4.13rc16-py3-none-any.whl",
+      "sha256": "d8fca502420f66ebb39dc98f965895e17530c42ee413af61798e7a7dcfc9a302"
     },
     {
       "package": "cripto-predictor",

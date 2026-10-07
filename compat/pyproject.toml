@@ -12,7 +12,7 @@ name = "ecosystem-compat"
 version = "0"
 requires-python = ">=3.13,<3.14"
 dependencies = [
-  "cain-research==0.4.13rc15",
+  "cain-research==0.4.13rc16",
   "cripto-predictor==1.2.0rc4",
   "brasileirao-predictor==0.3.0rc5",
   "stocks-predictor==0.3.0rc3",

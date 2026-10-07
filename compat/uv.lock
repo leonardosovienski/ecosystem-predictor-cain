@@ -61,7 +61,7 @@ wheels = [
 
 [[package]]
 name = "cain-research"
-version = "0.4.13rc15"
+version = "0.4.13rc16"
 source = { registry = ".stack-wheels" }
 dependencies = [
     { name = "predictor-research-bundle" },
@@ -70,7 +70,7 @@ dependencies = [
     { name = "predictor-research-transport" },
 ]
 wheels = [
-    { path = "cain_research-0.4.13rc15-py3-none-any.whl" },
+    { path = "cain_research-0.4.13rc16-py3-none-any.whl" },
 ]
 
 [[package]]
@@ -166,7 +166,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "brasileirao-predictor", specifier = "==0.3.0rc5" },
-    { name = "cain-research", specifier = "==0.4.13rc15" },
+    { name = "cain-research", specifier = "==0.4.13rc16" },
     { name = "cripto-predictor", specifier = "==1.2.0rc4" },
     { name = "predictor-core", specifier = "==3.2.1" },
     { name = "predictor-ops", specifier = "==4.2.2rc1" },
