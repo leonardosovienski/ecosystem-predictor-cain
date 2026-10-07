@@ -17,7 +17,7 @@ env:
   # Stack wheels and cross-repository reads: the product repositories are private. STACK_READ_TOKEN is a
   # fine-grained token with Contents: read on the nine repositories; GITHUB_TOKEN only reaches this repository
   # (enough for packages/research-transport, whose wheel is published here; not for compat/ nor the drift checks).
-  STACK_READ_TOKEN: ${{ secrets.STACK_READ_TOKEN }}
+  STACK_READ_TOKEN: ${{ secrets.STACK_READ_TOKEN || github.token }}
   GITHUB_TOKEN: ${{ github.token }}
 
 jobs:
