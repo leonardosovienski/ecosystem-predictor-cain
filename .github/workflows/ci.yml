@@ -13,6 +13,13 @@ permissions:
   contents: read
   actions: read
 
+env:
+  # Stack wheels and cross-repository reads: the product repositories are private. STACK_READ_TOKEN is a
+  # fine-grained token with Contents: read on the nine repositories; GITHUB_TOKEN only reaches this repository
+  # (enough for packages/research-transport, whose wheel is published here; not for compat/ nor the drift checks).
+  STACK_READ_TOKEN: ${{ secrets.STACK_READ_TOKEN }}
+  GITHUB_TOKEN: ${{ github.token }}
+
 jobs:
   research-packages:
     # Cada pacote de packages/* tem uv.lock próprio e é testado pelo lock em
@@ -32,8 +39,13 @@ jobs:
         with:
           version: "0.12.1"
           python-version: ${{ matrix.python }}
+      - name: Stack wheels from the registry (research-transport consumes the published protocol wheel)
+        if: matrix.package == 'research-transport'
+        run: uv run --no-project python ../../scripts/stack_wheels.py fetch --project .
       - run: uv lock --check
       - run: uv sync --locked --no-editable
+      - if: matrix.package == 'research-transport'
+        run: uv run --no-project python ../../scripts/stack_wheels.py check --project .
       - run: uv run --locked --no-sync pytest tests -q
       - if: matrix.package == 'research-bundle'
         run: uv run --locked --no-sync python -I -c "import research_bundle; from importlib.resources import files; assert files('research_bundle').joinpath('contract.json').read_bytes()"
@@ -69,10 +81,10 @@ jobs:
       - run: uv run --locked pyright
       - run: uv run --no-sync coverage run -m pytest tests packages/research-snapshot/tests packages/research-bundle/tests -q
       - run: uv run --no-sync coverage report --fail-under=75
-      - name: Current project representation
+      - name: Current project representation (reads the other private repositories with STACK_READ_TOKEN)
         if: matrix.python == '3.13'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.STACK_READ_TOKEN || github.token }}
         run: uv run --locked python scripts/check_current_representation.py
       - name: Historical six-repository facts remain internally consistent
         if: matrix.python == '3.13'
@@ -115,11 +127,11 @@ jobs:
           python-version: "3.13"
       - run: python scripts/check_architecture_manifest.py
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.STACK_READ_TOKEN || github.token }}
 
 
   joint-install:
-    # Lock CONJUNTA (compat/uv.lock): CAIN + os três domínios + core/ops/transporte, por URL + sha256, numa só
+    # Lock CONJUNTA (compat/uv.lock): CAIN + os três domínios + core/ops/transporte, por sha256 (compat/STACK_WHEELS.json), numa só
     # resolução de terceiros (achado E-1 da validação de 2026-09-29). Prova que o "ecossistema instalado junto"
     # é reproduzível por lock, sem resolver nada do PyPI na hora.
     name: Joint lock installs CAIN and the three domains together
@@ -135,8 +147,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
+      - name: Stack wheels from the registry (ten published wheels, sha256-verified; needs STACK_READ_TOKEN)
+        run: python ../scripts/stack_wheels.py fetch --project .
       - run: uv lock --check
       - run: uv sync --locked
+      - run: python ../scripts/stack_wheels.py check --project .
       - run: uv run --locked --no-sync python -I -c "import cain, research_transport, research_protocol, GarimpoInvestimentos.adapters.research_v2, brasileirao_predictor.adapters.research_v2, stocks_predictor; print('joint import ok')"
       - run: uv run --locked --no-sync predictor-research-consumer --help
       - run: uv run --locked --no-sync cain research --help

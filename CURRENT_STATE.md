@@ -1,5 +1,18 @@
 # Estado canônico atual
 
+> MODE: CURRENT_LIVING_STATE (camadas datadas; o texto de cada revisão fica como registro).
+>
+> **Atualização 2026-10-07 (R01, supply chain).** Os repositórios de produto são privados desde o início de 2026-10 e este
+> repositório foi renomeado `ecosystem-predictor-cain` em 2026-10-05 (o nome antigo é o showcase público, sem releases);
+> toda URL `releases/download/` fixada nos locks respondia 404 e o CI do `main` está vermelho desde 2026-10-04 (último run
+> 37627597341). Remediação na branch `claude/cain-audit-remediation-fiwdei`: `packages/research-transport/STACK_WHEELS.json`
+> e `compat/STACK_WHEELS.json` registram as wheels (repositório, tag, asset, sha256) e `scripts/stack_wheels.py` as baixa pela
+> API para `.stack-wheels/` antes do `uv sync` (ver [runbook](ECOSYSTEM_RUNBOOK.md#wheels-do-stack-registro-canônico));
+> `compat/` e os checks de drift precisam do segredo `STACK_READ_TOKEN`. As URLs em `registries/released_architecture.json`
+> e `registries/compatibility_candidate.json` são registro histórico das releases, não caminho de instalação.
+> Os links de CI abaixo apontam para o nome antigo do repositório e redirecionam enquanto o GitHub mantiver o redirect
+> de Actions; o repositório `ecosystem-predictor` atual não é este.
+
 > **Atualização 2026-09-30.** A combinação corrente do stack, o que foi validado em conjunto e o estado do ciclo de
 > qualificação D-27 estão em [ETAPA_B_INTEGRATED_STACK_20260928.md](ETAPA_B_INTEGRATED_STACK_20260928.md) (seção
 > "Atualização de 2026-09-30"). Wheels publicadas: core 3.2.1, ops 4.2.2rc1, ecosystem 0.2.1, protocolo 2.0.0rc2,

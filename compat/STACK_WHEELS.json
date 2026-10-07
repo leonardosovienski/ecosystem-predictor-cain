@@ -1,0 +1,90 @@
+{
+  "schema": "stack-wheels/1",
+  "documentation": "Canonical artifact registry of the stack wheels this project installs (R01, 2026-10-07): repository, release tag, asset and sha256 of each published wheel. `python ../../scripts/stack_wheels.py fetch --project .` downloads them through the GitHub API (private repositories need STACK_READ_TOKEN with Contents: read) into the gitignored flat index `.stack-wheels/`; `uv.lock` pins them there by name and version. `check` fails when registry, index, uv.lock and pyproject.toml disagree or a release URL reappears.",
+  "index_dir": ".stack-wheels",
+  "retired_repositories": {
+    "leonardosovienski/ecosystem-predictor": "renamed to leonardosovienski/ecosystem-predictor-cain on 2026-10-05; the old name now hosts the public showcase, which has no releases"
+  },
+  "wheels": [
+    {
+      "package": "cain-research",
+      "version": "0.4.13rc15",
+      "repository": "leonardosovienski/cain",
+      "release_tag": "v0.4.13rc15",
+      "asset": "cain_research-0.4.13rc15-py3-none-any.whl",
+      "sha256": "ff642b7271a7fcad18723b12bc7ebe29f0c2550ecfe178777b5c1481882aacf9"
+    },
+    {
+      "package": "cripto-predictor",
+      "version": "1.2.0rc4",
+      "repository": "leonardosovienski/cripto-predictor",
+      "release_tag": "v1.2.0rc4",
+      "asset": "cripto_predictor-1.2.0rc4-py3-none-any.whl",
+      "sha256": "32a4bd6d86719070e1a5d1e418c46034cfbf4ee292da11f17af2f60081fa9bf6"
+    },
+    {
+      "package": "brasileirao-predictor",
+      "version": "0.3.0rc5",
+      "repository": "leonardosovienski/brasileirao-predictor",
+      "release_tag": "v0.3.0rc5",
+      "asset": "brasileirao_predictor-0.3.0rc5-py3-none-any.whl",
+      "sha256": "be3bc5127ef64f1a3265b2e97384db3f4883d7d404030bed85aaa9fef1a078a6"
+    },
+    {
+      "package": "stocks-predictor",
+      "version": "0.3.0rc3",
+      "repository": "leonardosovienski/stocks-predictor",
+      "release_tag": "v0.3.0rc3",
+      "asset": "stocks_predictor-0.3.0rc3-py3-none-any.whl",
+      "sha256": "902f0d34efe7aef02c084e7886ef997c9b3f9bfe28e0e923c9c178361131ea00"
+    },
+    {
+      "package": "predictor-core",
+      "version": "3.2.1",
+      "repository": "leonardosovienski/core-predictor",
+      "release_tag": "v3.2.1",
+      "asset": "predictor_core-3.2.1-py3-none-any.whl",
+      "sha256": "10ef42f34ace8bb2df5f83ff7de2ceec79b035a25ea0a690e8942bd60d2fb4e3"
+    },
+    {
+      "package": "predictor-ops",
+      "version": "4.2.2rc1",
+      "repository": "leonardosovienski/predictor-ops",
+      "release_tag": "v4.2.2rc1",
+      "asset": "predictor_ops-4.2.2rc1-py3-none-any.whl",
+      "sha256": "0be70bfbb2437dfb080baceb9af41043a09d03b15a358903b8bd7007f5f169b3"
+    },
+    {
+      "package": "predictor-research-snapshot",
+      "version": "1.0.2rc1",
+      "repository": "leonardosovienski/ecosystem-predictor-cain",
+      "release_tag": "predictor-research-snapshot-v1.0.2rc1",
+      "asset": "predictor_research_snapshot-1.0.2rc1-py3-none-any.whl",
+      "sha256": "3bd4c0414ac2d457923601e3f919f6353b5cb9370a0f420a7a3ffc013a0aafad"
+    },
+    {
+      "package": "predictor-research-bundle",
+      "version": "1.0.1rc1",
+      "repository": "leonardosovienski/ecosystem-predictor-cain",
+      "release_tag": "predictor-research-bundle-v1.0.1rc1",
+      "asset": "predictor_research_bundle-1.0.1rc1-py3-none-any.whl",
+      "sha256": "65cf40c59c4f65d013a1134051fb94aa7c75b44f4ea6c71a54e25519143d0ea9"
+    },
+    {
+      "package": "predictor-research-protocol",
+      "version": "2.0.0rc2",
+      "repository": "leonardosovienski/ecosystem-predictor-cain",
+      "release_tag": "predictor-research-protocol-v2.0.0rc2",
+      "asset": "predictor_research_protocol-2.0.0rc2-py3-none-any.whl",
+      "sha256": "34a1e4121e4085b901e3bd96552e2f5b4067c5e6af5e99dc1c26d6276fc7c820"
+    },
+    {
+      "package": "predictor-research-transport",
+      "version": "0.1.0rc7",
+      "repository": "leonardosovienski/ecosystem-predictor-cain",
+      "release_tag": "predictor-research-transport-v0.1.0rc7",
+      "asset": "predictor_research_transport-0.1.0rc7-py3-none-any.whl",
+      "sha256": "d3dfbff4b72d717ed4f655b1c97e85ca909140dcd9ebfb17e9a51a8b089c60c2"
+    }
+  ]
+}

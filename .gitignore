@@ -31,3 +31,6 @@ build/
 # Alerta de saude das tarefas: estado de runtime, criado/apagado pelo
 # tools/monitor_task_health.ps1. A PRESENCA do arquivo e o sinal.
 ALERTA_TAREFAS.txt
+
+# Flat index of the published stack wheels (scripts/stack_wheels.py fetch), per project directory
+.stack-wheels/

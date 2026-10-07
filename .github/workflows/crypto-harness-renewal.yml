@@ -62,6 +62,8 @@ jobs:
           repository: ${{ steps.pin.outputs.repository }}
           ref: ${{ steps.pin.outputs.commit }}
           path: cripto-source
+          # cripto-predictor is private: GITHUB_TOKEN cannot read it (run 37451877373 failed here with git exit 128)
+          token: ${{ secrets.STACK_READ_TOKEN || github.token }}
           persist-credentials: false
       - uses: astral-sh/setup-uv@v6
         with:
@@ -79,6 +81,8 @@ jobs:
         run: |
           set -euo pipefail
           test "$(git rev-parse HEAD)" = "${{ steps.pin.outputs.commit }}"
+          # Pinned source newer than R01 (2026-10-07) consumes core/ops from STACK_WHEELS.json; older pins carry URL pins.
+          if [ -f STACK_WHEELS.json ]; then STACK_READ_TOKEN="${{ secrets.STACK_READ_TOKEN }}" uv run --no-project python scripts/stack_wheels.py fetch; fi
           uv sync --locked --no-dev --python "${{ steps.pin.outputs.python }}"
           test -z "$(git status --porcelain)"
           mkdir -p "$(dirname "$CRIPTO_TRIALS_PATH")"
