@@ -38,12 +38,11 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import tomllib
 import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
-
-import tomllib
 
 API = "https://api.github.com"
 REGISTRY_NAME = "STACK_WHEELS.json"

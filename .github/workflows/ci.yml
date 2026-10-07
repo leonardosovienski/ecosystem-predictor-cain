@@ -81,7 +81,7 @@ jobs:
       - run: uv run --locked pyright
       - run: uv run --no-sync coverage run -m pytest tests packages/research-snapshot/tests packages/research-bundle/tests -q
       - run: uv run --no-sync coverage report --fail-under=75
-      - name: Current project representation (reads the other private repositories: STACK_READ_TOKEN)
+      - name: Current project representation (reads the other private repositories with STACK_READ_TOKEN)
         if: matrix.python == '3.13'
         env:
           GITHUB_TOKEN: ${{ secrets.STACK_READ_TOKEN || github.token }}
