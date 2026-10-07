@@ -41,9 +41,9 @@ wheels = [
 [[package]]
 name = "predictor-research-protocol"
 version = "2.0.0rc2"
-source = { url = "https://github.com/leonardosovienski/ecosystem-predictor/releases/download/predictor-research-protocol-v2.0.0rc2/predictor_research_protocol-2.0.0rc2-py3-none-any.whl" }
+source = { registry = ".stack-wheels" }
 wheels = [
-    { url = "https://github.com/leonardosovienski/ecosystem-predictor/releases/download/predictor-research-protocol-v2.0.0rc2/predictor_research_protocol-2.0.0rc2-py3-none-any.whl", hash = "sha256:34a1e4121e4085b901e3bd96552e2f5b4067c5e6af5e99dc1c26d6276fc7c820" },
+    { path = "predictor_research_protocol-2.0.0rc2-py3-none-any.whl" },
 ]
 
 [[package]]
@@ -60,7 +60,7 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "predictor-research-protocol", url = "https://github.com/leonardosovienski/ecosystem-predictor/releases/download/predictor-research-protocol-v2.0.0rc2/predictor_research_protocol-2.0.0rc2-py3-none-any.whl" }]
+requires-dist = [{ name = "predictor-research-protocol", specifier = "==2.0.0rc2" }]
 
 [package.metadata.requires-dev]
 dev = [{ name = "pytest", specifier = ">=8.4,<10" }]

@@ -1,0 +1,18 @@
+{
+  "schema": "stack-wheels/1",
+  "documentation": "Canonical artifact registry of the stack wheels this project installs (R01, 2026-10-07): repository, release tag, asset and sha256 of each published wheel. `python ../../scripts/stack_wheels.py fetch --project .` downloads them through the GitHub API (private repositories need STACK_READ_TOKEN with Contents: read) into the gitignored flat index `.stack-wheels/`; `uv.lock` pins them there by name and version. `check` fails when registry, index, uv.lock and pyproject.toml disagree or a release URL reappears.",
+  "index_dir": ".stack-wheels",
+  "retired_repositories": {
+    "leonardosovienski/ecosystem-predictor": "renamed to leonardosovienski/ecosystem-predictor-cain on 2026-10-05; the old name now hosts the public showcase, which has no releases"
+  },
+  "wheels": [
+    {
+      "package": "predictor-research-protocol",
+      "version": "2.0.0rc2",
+      "repository": "leonardosovienski/ecosystem-predictor-cain",
+      "release_tag": "predictor-research-protocol-v2.0.0rc2",
+      "asset": "predictor_research_protocol-2.0.0rc2-py3-none-any.whl",
+      "sha256": "34a1e4121e4085b901e3bd96552e2f5b4067c5e6af5e99dc1c26d6276fc7c820"
+    }
+  ]
+}

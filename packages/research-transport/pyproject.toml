@@ -15,8 +15,12 @@ predictor-research-consumer = "research_transport.cli:main"
 [tool.setuptools.packages.find]
 where = ["src"]
 
-[tool.uv.sources]
-predictor-research-protocol = { url = "https://github.com/leonardosovienski/ecosystem-predictor/releases/download/predictor-research-protocol-v2.0.0rc2/predictor_research_protocol-2.0.0rc2-py3-none-any.whl" }
+# predictor-research-protocol: the published wheel registered in STACK_WHEELS.json, fetched into this flat index by
+# `python ../../scripts/stack_wheels.py fetch --project .` (sha256-verified; never versioned).
+[[tool.uv.index]]
+name = "stack-wheels"
+url = ".stack-wheels"
+format = "flat"
 
 [dependency-groups]
 dev = ["pytest>=8.4,<10"]

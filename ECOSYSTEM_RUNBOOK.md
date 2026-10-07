@@ -31,6 +31,21 @@ CRIPTO_ROOT=/tmp/crypto-diagnostic RELEASED_WHEELS=1 COMPATIBILITY_RECEIPT=/tmp/
 
 O instalador verifica os hashes no download e o checker verifica a identidade instalada e os payloads. Esse ambiente conjunto é uma prova de compatibilidade; os ambientes cotidianos continuam separados. CAIN e exportador são testados em ambientes mínimos distintos.
 
+## Wheels do stack (registro canônico)
+
+Desde 2026-10-07 (R01) nenhum `uv.lock` do ecossistema aponta para URL de release: os repositórios são privados e o
+antigo nome `ecosystem-predictor` passou a ser o showcase público (sem releases). Cada projeto consumidor registra as
+wheels publicadas em `STACK_WHEELS.json` (repositório, tag, asset, sha256) e `scripts/stack_wheels.py fetch --project DIR`
+as baixa pela API do GitHub para o índice local `.stack-wheels/` (não versionado), conferindo o sha256; o lock fixa os
+pacotes nesse índice por nome e versão. Token: `STACK_READ_TOKEN` (fine-grained, *Contents: read* nos repositórios
+produtores), `GH_TOKEN`/`GITHUB_TOKEN` ou `gh auth token`. Aqui: `packages/research-transport` (protocolo) e `compat`
+(lock conjunta das dez wheels). `check` prova que registro, índice, lock e `pyproject.toml` concordam.
+
+```sh
+python scripts/stack_wheels.py fetch --project compat && (cd compat && uv sync --locked)
+python scripts/stack_wheels.py check --project compat
+```
+
 ## Intercâmbio de evidências
 
 1. O produtor recebe a admissão explícita das fontes documentais e seus hashes. O exportador recusa fontes fora da lista, conteúdo alterado e destino dentro da origem científica.
