@@ -374,24 +374,20 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
     )
-    parser.add_argument(
-        "--project",
-        type=Path,
-        default=Path.cwd(),
-        help="directory holding pyproject.toml, uv.lock and STACK_WHEELS.json",
-    )
+    project_help = "directory holding pyproject.toml, uv.lock and STACK_WHEELS.json (default: cwd)"
+    parser.add_argument("--project", type=Path, default=None, help=project_help)
     commands = parser.add_subparsers(dest="command", required=True)
-    fetch_parser = commands.add_parser("fetch")
-    fetch_parser.add_argument(
+    subparsers = {name: commands.add_parser(name) for name in ("fetch", "check", "probe", "requirements")}
+    for subparser in subparsers.values():
+        # Accepted before or after the command: `--project DIR fetch` and `fetch --project DIR`.
+        subparser.add_argument("--project", type=Path, default=None, dest="project_after", help=project_help)
+    subparsers["fetch"].add_argument(
         "--force", action="store_true", help="re-download even when the verified wheel is present"
     )
-    commands.add_parser("check")
-    commands.add_parser("probe")
-    requirements_parser = commands.add_parser("requirements")
-    requirements_parser.add_argument("--input", type=Path, required=True)
-    requirements_parser.add_argument("--output", type=Path, required=True)
+    subparsers["requirements"].add_argument("--input", type=Path, required=True)
+    subparsers["requirements"].add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
-    project = args.project.resolve()
+    project = (args.project_after or args.project or Path.cwd()).resolve()
     try:
         if args.command == "fetch":
             fetch(project, force=args.force)
