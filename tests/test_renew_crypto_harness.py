@@ -46,7 +46,16 @@ def _registry(root: Path) -> dict:
     return json.loads((root / "registries" / "harness_registry.json").read_text(encoding="utf-8"))
 
 
-def _write_attestations(folder: Path, passed_at: str, expires_at: str, commit: str = COMMIT) -> None:
+def _stamp(value: datetime) -> str:
+    return value.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def _write_attestations(folder: Path, now: datetime, commit: str = COMMIT) -> None:
+    """Staged attestations dated relative to `now`: the registry copy moves with every real renewal, so a
+    fixed calendar date would be refused (`expires_at` <= now) as soon as the ALIGNED entries outlive it.
+    """
+    passed_at = _stamp(now - renewal.timedelta(days=1))
+    expires_at = _stamp(now + renewal.timedelta(days=6))
     folder.mkdir(parents=True, exist_ok=True)
     for metric, name, fingerprint in (
         ("psr", "trials.harness_attestation.json", "a" * 64),
@@ -89,7 +98,7 @@ def test_apply_registers_the_reissue_and_the_drift_check_accepts_it(root: Path) 
     now = _latest_aligned_expiry(registry) - renewal.timedelta(hours=24)
     before = [item["evidence_path"] for item in renewal._aligned(registry)]
     folder = root / "staged"
-    _write_attestations(folder, "2026-10-04T00:00:00Z", "2026-10-11T00:00:00Z")
+    _write_attestations(folder, now)
     changed = renewal.apply(root, registry, CONFIG, now, folder)
     day = now.strftime("%Y%m%d")
     assert changed["superseded"] == before and changed["expired"] == []
@@ -116,7 +125,7 @@ def test_apply_refuses_an_attestation_of_another_commit(root: Path) -> None:
     registry = _registry(root)
     now = _latest_aligned_expiry(registry) - renewal.timedelta(hours=24)
     folder = root / "staged"
-    _write_attestations(folder, "2026-10-04T00:00:00Z", "2026-10-11T00:00:00Z", commit="f" * 40)
+    _write_attestations(folder, now, commit="f" * 40)
     with pytest.raises(SystemExit, match="code_version"):
         renewal.apply(root, registry, CONFIG, now, folder)
 
