@@ -70,20 +70,34 @@
     },
     {
       "repository": "ecosystem-predictor",
-      "tag": "v0.2.1",
-      "source_commit": "12531fa813f809ee86f5fcd816a254d3cf6f2bcb",
-      "release_url": "https://github.com/leonardosovienski/ecosystem-predictor/releases/tag/v0.2.1",
-      "ci_run_id": 36641279706,
-      "ci_url": "https://github.com/leonardosovienski/ecosystem-predictor/actions/runs/36641279706",
+      "tag": "v0.2.2",
+      "source_commit": "6aeec47591e1c08fe728b3e86d0411187054a80d",
+      "release_url": "https://github.com/leonardosovienski/ecosystem-predictor-cain/releases/tag/v0.2.2",
+      "ci_run_id": 37703276457,
+      "ci_url": "https://github.com/leonardosovienski/ecosystem-predictor-cain/actions/runs/37703276457",
       "wheels": [
         {
           "name": "ecosystem-predictor",
-          "version": "0.2.1",
-          "filename": "ecosystem_predictor-0.2.1-py3-none-any.whl",
-          "url": "https://github.com/leonardosovienski/ecosystem-predictor/releases/download/v0.2.1/ecosystem_predictor-0.2.1-py3-none-any.whl",
-          "sha256": "69374cf0eca60301724f07153b8a815c4807f808ace98d0188807e890ae6a80c"
+          "version": "0.2.2",
+          "filename": "ecosystem_predictor-0.2.2-py3-none-any.whl",
+          "url": "https://github.com/leonardosovienski/ecosystem-predictor-cain/releases/download/v0.2.2/ecosystem_predictor-0.2.2-py3-none-any.whl",
+          "sha256": "63cb1c16b02a89e5412b7b1b3f83dff040444a29ca895dc364c0452291b8ef3e"
         }
-      ]
+      ],
+      "previous": {
+        "tag": "v0.2.1",
+        "source_commit": "12531fa813f809ee86f5fcd816a254d3cf6f2bcb",
+        "wheels": [
+          {
+            "name": "ecosystem-predictor",
+            "version": "0.2.1",
+            "filename": "ecosystem_predictor-0.2.1-py3-none-any.whl",
+            "url": "https://github.com/leonardosovienski/ecosystem-predictor/releases/download/v0.2.1/ecosystem_predictor-0.2.1-py3-none-any.whl",
+            "sha256": "69374cf0eca60301724f07153b8a815c4807f808ace98d0188807e890ae6a80c"
+          }
+        ]
+      },
+      "note": "2026-10-07: 0.2.2 publicada pelo Release (run 37703328981) com a lock conjunta compat/ na cain rc16; sha256 conferido por download anônimo"
     },
     {
       "repository": "cripto-predictor",
