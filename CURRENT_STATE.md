@@ -2,6 +2,15 @@
 
 > MODE: CURRENT_LIVING_STATE (camadas datadas; o texto de cada revisão fica como registro).
 >
+> **Camada 2026-10-08 (fechamento da fase de remediação).** Os nove repositórios do stack estão **públicos** desde 2026-10-07 (D-35 do
+> predictor-qualification; licença proprietária, código source-available); o fetch do registro resolve **sem token** (`STACK_READ_TOKEN`
+> é opcional, o CI usa o token do job como fallback); CI do `main` verde em `7fb3ae5a` (run 37784280880, inclusive o job "Joint lock
+> installs CAIN and the three domains together"); instalação limpa reverificada em 2026-10-08 a partir de clones novos sem credencial
+> (`packages/research-transport` e `compat/`: fetch + check + `uv lock --check`; `compat/`: `uv sync --locked` e import de cain 0.4.13rc16,
+> transporte 0.1.0rc7, core 3.2.1, ops 4.2.2rc1). O parágrafo seguinte (manhã de 2026-10-07) fica como registro: "privados", "CI vermelho" e
+> "precisam do segredo" descrevem aquele momento. Estado vivo do CAIN e lista única de pendências do dono:
+> `cain/docs/funding/FUNDING_READINESS_SOURCE_OF_TRUTH.md` (§0 e §8).
+
 > **Atualização 2026-10-07 (R01, supply chain).** Os repositórios de produto são privados desde o início de 2026-10 e este
 > repositório foi renomeado `ecosystem-predictor-cain` em 2026-10-05 (o nome antigo é o showcase público, sem releases);
 > toda URL `releases/download/` fixada nos locks respondia 404 e o CI do `main` está vermelho desde 2026-10-04 (último run
@@ -13,13 +22,13 @@
 > Os links de CI abaixo apontam para o nome antigo do repositório e redirecionam enquanto o GitHub mantiver o redirect
 > de Actions; o repositório `ecosystem-predictor` atual não é este.
 
+> **Camada 2026-10-07 (noite):** cain `v0.4.13rc16` (`de5db06b`, wheel `d8fca502…`; código igual ao da rc15, lock pelo registro, R01/D-32)
+> adotada na lock conjunta `compat/` e publicada como ecosystem `0.2.2`; qualificada pelas integrações crypto (rc16, reemitida rc16e) e stocks (ciclo 6, reemitido ciclo 7)
+> do predictor-qualification (attestations QUALIFIED, D-34); a integração do brasileirão continua na rc13 até o runtime do dono.
+> O parágrafo seguinte é o estado de 2026-09-30, preservado (em 2026-10-08 esta camada foi movida para fora do meio da frase dele, sem mudar texto).
+
 > **Atualização 2026-09-30.** A combinação corrente do stack, o que foi validado em conjunto e o estado do ciclo de
 > qualificação D-27 estão em [ETAPA_B_INTEGRATED_STACK_20260928.md](ETAPA_B_INTEGRATED_STACK_20260928.md) (seção
-> **Camada 2026-10-07 (noite):** cain `v0.4.13rc16` (`de5db06b`, wheel `d8fca502…`; código igual ao da rc15, lock pelo registro, R01/D-32)
-> adotada na lock conjunta `compat/` e publicada como ecosystem `0.2.2`; qualificada pelas integrações crypto (rc16) e stocks (ciclo 6)
-> do predictor-qualification (attestations QUALIFIED, D-34); a integração do brasileirão continua na rc13 até o runtime do dono.
-> O parágrafo seguinte é o estado de 2026-09-30, preservado.
->
 > "Atualização de 2026-09-30"). Wheels publicadas: core 3.2.1, ops 4.2.2rc1, ecosystem 0.2.1, protocolo 2.0.0rc2,
 > transporte 0.1.0rc7, snapshot 1.0.2rc1, bundle 1.0.1rc1, cain 0.4.13rc15, cripto 1.2.0rc4, brasileirão 0.3.0rc5,
 > stocks 0.3.0rc3 (`registries/released_architecture.json`; `registries/compatibility_candidate.json` aponta para os

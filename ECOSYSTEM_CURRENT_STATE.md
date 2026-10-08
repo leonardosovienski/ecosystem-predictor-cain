@@ -1,5 +1,7 @@
 # SUPERSEDED — estado mecânico de 2026-08-17
 
+> MODE: SNAPSHOT_IMMUTABLE · AS_OF_DATE: 2026-08-17 · SUPERSEDED_BY: CURRENT_STATE.md; o texto datado não é corrigido no lugar.
+
 <!-- DOC-SYNC-20260912 -->
 > **Continuidade de publicação:** [estado e evidências atuais](PUBLICATION_STATUS_20260912.md). A combinação Crypto/Ecosystem/CAIN foi integrada e validada em main. As referências anteriores à branch candidata e à falha Linux são históricas; não definem o resultado desta combinação. Estados científicos e releases mantêm suas fontes próprias.
 <!-- /DOC-SYNC-20260912 -->
