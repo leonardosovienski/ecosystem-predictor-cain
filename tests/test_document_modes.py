@@ -20,7 +20,8 @@ def _declarations(text: str) -> list[str]:
 
 def test_living_documents_declare_the_living_mode_only() -> None:
     for relative in LIVING:
-        assert _declarations((ROOT / relative).read_text(encoding="utf-8")) == ["CURRENT_LIVING_STATE"], relative
+        text = (ROOT / relative).read_text(encoding="utf-8")
+        assert _declarations(text) == ["CURRENT_LIVING_STATE"], relative
 
 
 def test_snapshot_documents_declare_date_sha_and_successor() -> None:
