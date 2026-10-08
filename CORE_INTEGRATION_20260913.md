@@ -30,10 +30,10 @@ O Ecosystem agora possui o job `Core official wheel functional integration`: obt
 
 A integração foi publicada no commit
 `3cfb74bef126c421424c08cc774034b42cae5cd4` da main do Ecosystem.
-A [CI 34765563374](https://github.com/leonardosovienski/ecosystem-predictor/actions/runs/34765563374)
+A [CI 34765563374](https://github.com/leonardosovienski/ecosystem-predictor-cain/actions/runs/34765563374)
 aprovou o teste funcional da wheel oficial, os três plugins, as distribuições
 publicadas, o inventário e os contratos. A
-[segurança 34765563366](https://github.com/leonardosovienski/ecosystem-predictor/actions/runs/34765563366)
+[segurança 34765563366](https://github.com/leonardosovienski/ecosystem-predictor-cain/actions/runs/34765563366)
 também passou. Foram 79 testes locais e oito casos funcionais da wheel no novo job.
 
 Esse recibo identifica o commit de integração. Atualizações posteriores somente
