@@ -1,7 +1,8 @@
-"""Canonical state documents declare their mode (closure audit 2026-10-08; mirrors cain/tests/test_canonical_state.py).
+"""Canonical state documents declare their mode (closure audit 2026-10-08).
 
-A living document declares exactly one ``MODE: CURRENT_LIVING_STATE``; a snapshot declares ``MODE: SNAPSHOT_IMMUTABLE``
-with AS_OF_DATE, AS_OF_SHA and SUPERSEDED_BY. No other rule: this is a declaration check, not a content check.
+Mirrors cain/tests/test_canonical_state.py. A living document declares exactly one
+``MODE: CURRENT_LIVING_STATE``; a snapshot declares ``MODE: SNAPSHOT_IMMUTABLE`` with AS_OF_DATE,
+AS_OF_SHA and SUPERSEDED_BY. No other rule: this is a declaration check, not a content check.
 """
 from __future__ import annotations
 
