@@ -1,5 +1,7 @@
 # HANDOFF — ecosystem-predictor
 
+> MODE: CURRENT_LIVING_STATE · documento de navegação; o estado canônico está em CURRENT_STATE.md (camadas datadas). Última atualização material: 2026-10-08.
+
 **Continuidade de engenharia:** [estado e navegação atuais](CURRENT_STATE.md),
 [integração do Core](CORE_INTEGRATION_20260913.md) e
 [índice documental](docs/HISTORICAL_DOCUMENT_INDEX.md). Core 3.2.1 em main
