@@ -54,10 +54,10 @@ significa nova release ou atualização automática de instalações.
 | Operação e capital | Permissões pertencem aos domínios e à decisão humana explícita. Nenhuma autorização resulta desta organização ou de CI verde. |
 
 A integração Ecosystem `3cfb74bef126c421424c08cc774034b42cae5cd4` tem
-[CI](https://github.com/leonardosovienski/ecosystem-predictor/actions/runs/34765563374)
-e [segurança](https://github.com/leonardosovienski/ecosystem-predictor/actions/runs/34765563366)
+[CI](https://github.com/leonardosovienski/ecosystem-predictor-cain/actions/runs/34765563374)
+e [segurança](https://github.com/leonardosovienski/ecosystem-predictor-cain/actions/runs/34765563366)
 aprovadas. Essa evidência continua vinculada àquela revisão. A baseline documental
-acima também tem [CI própria](https://github.com/leonardosovienski/ecosystem-predictor/actions/runs/34765919043).
+acima também tem [CI própria](https://github.com/leonardosovienski/ecosystem-predictor-cain/actions/runs/34765919043).
 
 ## Projetos e reprodução
 

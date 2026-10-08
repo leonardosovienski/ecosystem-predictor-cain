@@ -11,8 +11,8 @@ nova branch apenas para atualizar este registro.
 - API paginada: 25 branches (main + 24 secundárias), 24 PRs históricos, zero abertos.
 - Permissão de push/admin presente; proteção clássica retorna 404, nenhum ruleset
   de repositório ou regra efetiva de main. Isso não dispensa os gates de integração.
-- CI baseline [34765919043](https://github.com/leonardosovienski/ecosystem-predictor/actions/runs/34765919043)
-  e segurança [34765919056](https://github.com/leonardosovienski/ecosystem-predictor/actions/runs/34765919056): success.
+- CI baseline [34765919043](https://github.com/leonardosovienski/ecosystem-predictor-cain/actions/runs/34765919043)
+  e segurança [34765919056](https://github.com/leonardosovienski/ecosystem-predictor-cain/actions/runs/34765919056): success.
 - Sem `AGENTS.md` aplicável encontrado no checkout ou seus ancestrais examinados.
 - Worktree isolada: `C:/CAIN/work/ecosystem-organization-20260913`, única branch
   temporária `docs/organize-ecosystem-20260913`. Outros projetos consultados em leitura.

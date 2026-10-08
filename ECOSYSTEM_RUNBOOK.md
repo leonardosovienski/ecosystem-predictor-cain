@@ -33,12 +33,13 @@ O instalador verifica os hashes no download e o checker verifica a identidade in
 
 ## Wheels do stack (registro canônico)
 
-Desde 2026-10-07 (R01) nenhum `uv.lock` do ecossistema aponta para URL de release: os repositórios são privados e o
-antigo nome `ecosystem-predictor` passou a ser o showcase público (sem releases). Cada projeto consumidor registra as
+Desde 2026-10-07 (R01) nenhum `uv.lock` do ecossistema aponta para URL de release: os repositórios ficaram privados no início de
+2026-10 (públicos de novo desde 2026-10-07, D-35) e o antigo nome `ecosystem-predictor` passou a ser o showcase público (sem releases). Cada projeto consumidor registra as
 wheels publicadas em `STACK_WHEELS.json` (repositório, tag, asset, sha256) e `scripts/stack_wheels.py fetch --project DIR`
 as baixa pela API do GitHub para o índice local `.stack-wheels/` (não versionado), conferindo o sha256; o lock fixa os
-pacotes nesse índice por nome e versão. Token: `STACK_READ_TOKEN` (fine-grained, *Contents: read* nos repositórios
-produtores), `GH_TOKEN`/`GITHUB_TOKEN` ou `gh auth token`. Aqui: `packages/research-transport` (protocolo) e `compat`
+pacotes nesse índice por nome e versão. Token: nenhum enquanto os produtores forem públicos (o CI usa o token do job como
+fallback); se voltarem a ser privados, `STACK_READ_TOKEN` (fine-grained, *Contents: read* nos repositórios produtores),
+`GH_TOKEN`/`GITHUB_TOKEN` ou `gh auth token`. Aqui: `packages/research-transport` (protocolo) e `compat`
 (lock conjunta das dez wheels). `check` prova que registro, índice, lock e `pyproject.toml` concordam.
 
 ```sh

@@ -34,8 +34,8 @@ CLI, API e web devolveram conteúdo coerente. Após restore, raízes dos produto
 - [Stocks CI247](https://github.com/leonardosovienski/stocks-predictor/actions/runs/34725687619): 966 testes por Python 3.13/3.14, zero falhas/erros/skips, R8 e controles aprovados; wheel fora do checkout, ingestão sintética 250 mil, deduplicação e restore.
 - [Exportadores Stocks](https://github.com/leonardosovienski/stocks-predictor/actions/runs/34725687720): Snapshot, Bundle e seleção em Python 3.12/3.13/3.14.
 - [CAIN main](https://github.com/leonardosovienski/cain/actions/runs/34727241470): 605 testes por Python 3.11–3.14, zero falhas/erros, dois skips de plataforma; instalação Windows exercitada separadamente.
-- Ecosystem do aceite: [CI](https://github.com/leonardosovienski/ecosystem-predictor/actions/runs/34727305448) e [segurança](https://github.com/leonardosovienski/ecosystem-predictor/actions/runs/34727305461) aprovadas. `check_ecosystem_drift.py` online retornou `ECOSYSTEM_NO_DRIFT (OFFLINE+ONLINE)` na conferência; não é garantia permanente de ausência de drift.
-- [Stocks PR85](https://github.com/leonardosovienski/stocks-predictor/pull/85), [CAIN PR1](https://github.com/leonardosovienski/cain/pull/1) e [Ecosystem PR24](https://github.com/leonardosovienski/ecosystem-predictor/pull/24) integrados.
+- Ecosystem do aceite: [CI](https://github.com/leonardosovienski/ecosystem-predictor-cain/actions/runs/34727305448) e [segurança](https://github.com/leonardosovienski/ecosystem-predictor-cain/actions/runs/34727305461) aprovadas. `check_ecosystem_drift.py` online retornou `ECOSYSTEM_NO_DRIFT (OFFLINE+ONLINE)` na conferência; não é garantia permanente de ausência de drift.
+- [Stocks PR85](https://github.com/leonardosovienski/stocks-predictor/pull/85), [CAIN PR1](https://github.com/leonardosovienski/cain/pull/1) e [Ecosystem PR24](https://github.com/leonardosovienski/ecosystem-predictor-cain/pull/24) integrados.
 
 Stocks ficou somente em main no checkout canônico e origin; 13 branches locais e 13 remotas removidas com SHA esperado após preservação e CI. Nenhuma branch CAIN/Ecosystem foi excluída. Instalação local não equivale a nova tag/release.
 
