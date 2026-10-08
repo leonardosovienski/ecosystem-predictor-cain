@@ -2,7 +2,7 @@
 
 Este documento registra o stack que as três integrações da Etapa B qualificaram juntas. É só registro: nenhuma wheel muda aqui. As identidades vêm das attestations no `main` do predictor-qualification.
 
-**Pilha qualificada vigente: cain 0.4.13rc13 + predictor-research-transport 0.1.0rc6** (as três attestations `QUALIFIED` abaixo). **Pilha candidata em qualificação (D-27, 2026-09-30): cain 0.4.13rc15 + transporte 0.1.0rc7 + cripto 1.2.0rc4** — ver a seção "Atualização de 2026-09-30" ao fim; nenhuma attestation foi reemitida ainda. A pilha anterior, cain 0.4.13rc12 + transporte 0.1.0rc5, está no histórico.
+**Pilha qualificada vigente (2026-10-08): cain 0.4.13rc16 + predictor-research-transport 0.1.0rc7** nas integrações crypto (cripto 1.2.0rc4) e stocks (stocks 0.3.0rc3, cripto 1.2.0rc3); a integração do brasileirão continua na **cain 0.4.13rc13 + transporte 0.1.0rc6** até o runtime do dono — ver a seção "Atualização de 2026-10-07" ao fim. Texto de 2026-09-30, preservado: pilha qualificada vigente cain 0.4.13rc13 + transporte 0.1.0rc6 (as três attestations `QUALIFIED` abaixo); pilha candidata em qualificação (D-27) cain 0.4.13rc15 + transporte 0.1.0rc7 + cripto 1.2.0rc4, nenhuma attestation reemitida então. A pilha anterior, cain 0.4.13rc12 + transporte 0.1.0rc5, está no histórico.
 
 ## Attestations
 
