@@ -7,33 +7,16 @@
 > é opcional, o CI usa o token do job como fallback); CI do `main` verde em `7fb3ae5a` (run 37784280880, inclusive o job "Joint lock
 > installs CAIN and the three domains together"); instalação limpa reverificada em 2026-10-08 a partir de clones novos sem credencial
 > (`packages/research-transport` e `compat/`: fetch + check + `uv lock --check`; `compat/`: `uv sync --locked` e import de cain 0.4.13rc16,
-> transporte 0.1.0rc7, core 3.2.1, ops 4.2.2rc1). O parágrafo seguinte (manhã de 2026-10-07) fica como registro: "privados", "CI vermelho" e
-> "precisam do segredo" descrevem aquele momento. Estado vivo do CAIN e lista única de pendências do dono:
+> transporte 0.1.0rc7, core 3.2.1, ops 4.2.2rc1). A camada da manhã de 2026-10-07 ("privados", "CI vermelho", "precisam do segredo") descreve aquele momento e está no arquivo de camadas. Estado vivo do CAIN e lista única de pendências do dono:
 > `cain/docs/funding/FUNDING_READINESS_SOURCE_OF_TRUTH.md` (§0 e §8).
-
-> **Atualização 2026-10-07 (R01, supply chain).** Os repositórios de produto são privados desde o início de 2026-10 e este
-> repositório foi renomeado `ecosystem-predictor-cain` em 2026-10-05 (o nome antigo é o showcase público, sem releases);
-> toda URL `releases/download/` fixada nos locks respondia 404 e o CI do `main` está vermelho desde 2026-10-04 (último run
-> 37627597341). Remediação na branch `claude/cain-audit-remediation-fiwdei`: `packages/research-transport/STACK_WHEELS.json`
-> e `compat/STACK_WHEELS.json` registram as wheels (repositório, tag, asset, sha256) e `scripts/stack_wheels.py` as baixa pela
-> API para `.stack-wheels/` antes do `uv sync` (ver [runbook](ECOSYSTEM_RUNBOOK.md#wheels-do-stack-registro-canônico));
-> `compat/` e os checks de drift precisam do segredo `STACK_READ_TOKEN`. As URLs em `registries/released_architecture.json`
-> e `registries/compatibility_candidate.json` são registro histórico das releases, não caminho de instalação.
-> Os links de CI abaixo apontam para o nome antigo do repositório e redirecionam enquanto o GitHub mantiver o redirect
-> de Actions; o repositório `ecosystem-predictor` atual não é este.
 
 > **Camada 2026-10-07 (noite):** cain `v0.4.13rc16` (`de5db06b`, wheel `d8fca502…`; código igual ao da rc15, lock pelo registro, R01/D-32)
 > adotada na lock conjunta `compat/` e publicada como ecosystem `0.2.2`; qualificada pelas integrações crypto (rc16, reemitida rc16e) e stocks (ciclo 6, reemitido ciclo 7)
 > do predictor-qualification (attestations QUALIFIED, D-34); a integração do brasileirão continua na rc13 até o runtime do dono.
-> O parágrafo seguinte é o estado de 2026-09-30, preservado (em 2026-10-08 esta camada foi movida para fora do meio da frase dele, sem mudar texto).
+> (Camada mantida no documento vivo: é o estado vigente da lock conjunta.)
 
-> **Atualização 2026-09-30.** A combinação corrente do stack, o que foi validado em conjunto e o estado do ciclo de
-> qualificação D-27 estão em [ETAPA_B_INTEGRATED_STACK_20260928.md](ETAPA_B_INTEGRATED_STACK_20260928.md) (seção
-> "Atualização de 2026-09-30"). Wheels publicadas: core 3.2.1, ops 4.2.2rc1, ecosystem 0.2.1, protocolo 2.0.0rc2,
-> transporte 0.1.0rc7, snapshot 1.0.2rc1, bundle 1.0.1rc1, cain 0.4.13rc15, cripto 1.2.0rc4, brasileirão 0.3.0rc5,
-> stocks 0.3.0rc3 (`registries/released_architecture.json`; `registries/compatibility_candidate.json` aponta para os
-> commits das tags). As três distribuições de domínio instaladas juntas com o resto do stack carregam no registry
-> isoladas, com capital `FORBIDDEN` (`scripts/check_real_plugin_integration.py`, `RELEASED_WHEELS=1`, 2026-09-30).
+> As camadas de 2026-10-07 (manhã, R01) e de 2026-09-30 foram movidas sem alteração para
+> [`docs/archive/CURRENT_STATE_camadas_2026-09-30_a_2026-10-07.md`](docs/archive/CURRENT_STATE_camadas_2026-09-30_a_2026-10-07.md) em 2026-10-08.
 > O texto abaixo (revisão de 13/09/2026) continua válido para contratos, registry e recibos históricos.
 
 **Revisão:** 13/09/2026. A [reconciliação de fidelidade](docs/maintenance/fidelity-20260913.md)
